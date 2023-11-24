@@ -1,4 +1,4 @@
-const countryApiURL = "https://www.countryflagicons.com/FLAT/64/"
+const countryApiURL = "https://flagsapi.com"
 
 const cityInput = document.querySelector('#city-input');
 const searchBtn = document.querySelector('#search');
@@ -29,7 +29,7 @@ const showWeatherData = async (city) => {
     tempElement.innerText = parseInt(data.main.temp);
     descElement.innerText = data.weather[0].description;
     weatherIconElement.setAttribute('src', `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`);
-    countryElement.setAttribute('src', countryApiURL + data.sys.country + '.png');
+    countryElement.setAttribute('src', countryApiURL + '/' + data.sys.country + '/flat/64.png');
     humidityElement.innerText = `${data.main.humidity}%`;
     windElement.innerText = `${data.wind.speed}Km/h`;
 
