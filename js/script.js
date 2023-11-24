@@ -1,4 +1,3 @@
-const apiKey = "058b137b23a9d2646fe9a64396522027";
 const countryApiURL = "https://www.countryflagicons.com/FLAT/64/"
 
 const cityInput = document.querySelector('#city-input');
@@ -15,7 +14,7 @@ const windElement = document.querySelector('#wind span');
 const weatherContainer = document.querySelector('#weather-data')
 
 const getWeatherData = async (city) => {
-    const apiWeahterURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=pt_br`;
+    const apiWeahterURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.APIKEY}&lang=pt_br`;
 
     const res = await fetch(apiWeahterURL);
     const data = await res.json();
